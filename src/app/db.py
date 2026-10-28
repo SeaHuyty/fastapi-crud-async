@@ -27,5 +27,15 @@ notes = Table(
     Column("created_date", DateTime, default=func.now(), nullable=False),
 )
 
+events = Table(
+    "events",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("title", String(80)),
+    Column("city", String(50)),
+    Column("price_usd", Integer),
+    Column("seats_left", Integer),
+)
+
 # databases query builder
 database = Database(DATABASE_URL)
